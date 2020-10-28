@@ -18,6 +18,7 @@ function generatePassword() {
   var pass = "";
   var lLetters = "abcdefghijklmnopqrstuvwxyz";
   var uLetters = "ABCDEFGHIJKLMONPQRSTUVWXYZ";
+  var bothLetters = lLetters + uLetters;
 
   if (lowerCase === true) {
     for (var i = 1; i <= passwordLength; i++) {
@@ -30,6 +31,13 @@ function generatePassword() {
     for (var i = 1; i <= passwordLength; i++) {
       var char = Math.floor(Math.random() * uLetters.length + 1);
       pass += uLetters.charAt(char)
+    }
+  }
+  
+  if (lowerCase === true && upperCase === true) {
+    for (var i = 1; i <= passwordLength; i++) {
+      var char = Math.floor(Math.random() * bothLetters.length + 1);
+      pass += bothLetters.charAt(char)
     }
   }
 
