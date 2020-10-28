@@ -17,11 +17,19 @@ while (!lowerCase) {
 function generatePassword() {
   var pass = "";
   var lLetters = "abcdefghijklmnopqrstuvwxyz";
+  var uLetters = "ABCDEFGHIJKLMONPQRSTUVWXYZ";
 
   if (lowerCase === true) {
     for (var i = 1; i <= passwordLength; i++) {
       var char = Math.floor(Math.random() * lLetters.length + 1);
       pass += lLetters.charAt(char)
+    }
+  }
+  
+  if (upperCase === true && lowerCase === false) {
+    for (var i = 1; i <= passwordLength; i++) {
+      var char = Math.floor(Math.random() * uLetters.length + 1);
+      pass += uLetters.charAt(char)
     }
   }
 
